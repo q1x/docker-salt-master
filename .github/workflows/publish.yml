@@ -43,7 +43,7 @@ jobs:
           [[ -z "${IMAGE_TAG}" ]] && IMAGE_TAG='latest'
 
           DOCKER_IMAGE="${IMAGE_NAME}:${IMAGE_TAG}"
-          TAGS="${registry}/${DOCKER_IMAGE}"
+          TAGS="ghcr.io/${DOCKER_IMAGE}"
           for registry in ${EXTRA_REGISTRIES}; do
             TAGS="${TAGS},${registry}/${DOCKER_IMAGE}"
           done
