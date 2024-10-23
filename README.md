@@ -1,4 +1,4 @@
-# Dockerized Salt Master v3006.9 _Chlorine_
+# Dockerized Salt Master v3006.9 
 
 <picture align="center">
   <source media="(prefers-color-scheme: dark)" srcset="/social/docker-salt-master-banner-dark.png">
