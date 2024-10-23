@@ -22,7 +22,7 @@ env:
   IMAGE_NAME: ${{ github.repository }}
   PLATFORMS: linux/amd64,linux/arm64
   CACHE_PATH: ${{ github.workspace }}/.buildx-cache
-  EXTRA_REGISTRIES: ghcr.io quay.io
+  #EXTRA_REGISTRIES: ghcr.io quay.io
 
 jobs:
   metadata:
