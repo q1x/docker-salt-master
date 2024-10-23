@@ -22,7 +22,7 @@ env:
   IMAGE_NAME: ${{ github.repository }}
   PLATFORMS: linux/amd64,linux/arm64
   CACHE_PATH: ${{ github.workspace }}/.buildx-cache
-  #EXTRA_REGISTRIES: ghcr.io quay.io
+  EXTRA_REGISTRIES: ghcr.io
 
 jobs:
   metadata:
@@ -142,10 +142,10 @@ jobs:
             VCS_REF=${{ needs.metadata.outputs.vcs_ref }}
             BUILD_DATE=${{ needs.metadata.outputs.created_on }}
           outputs: |
-            type=image,annotation-index.org.opencontainers.image.description=https://github.com/cdalvaro/docker-salt-master
+            type=image,annotation-index.org.opencontainers.image.description=https://github.com/${{ github.actor }}/docker-salt-master
           cache-from: |
             type=local,src=${{ env.CACHE_PATH }}
-            ghcr.io/cdalvaro/docker-salt-master:latest
+            ghcr.io/${{ github.actor }}/docker-salt-master:latest
           cache-to: type=local,dest=${{ env.CACHE_PATH }}
           pull: true
           push: true
